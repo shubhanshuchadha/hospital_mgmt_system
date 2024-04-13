@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    {% extends 'navbar.html' %}
+    {% block body %}
+    <div class="container" style="margin: 60px;">
+        <h2 class="text-center">Contact Us</h2>
+        <br>
+        <br>
+        <div class="row">
+
+            <!-- Contact Numbers -->
+            <div class="col-lg-4">
+                <h4><i class="fas fa-phone-square"></i> Contact</h4>
+                <p>
+                    <a href="tel:+91 8004822175">+91 8004822175</a><br>
+                    <a href="tel:+91 9452849218">+91 9452849218</a><br>
+                    <a href="tel:+91 7607027053">+91 7607027053</a>
+                </p>
+            </div>
+
+            <!-- Send Email -->
+            <div class="col-lg-4">
+                <h4><i class="fas fa-envelope"></i> Send Email</h4>
+                <p class="mt-3 font-weight-bold"><a href="mailto:shubhanshuchadha@gmail.com">shubhanshuchadha@gmail.com</a></p>
+            </div>
+
+            <!-- Address on Map -->
+            <div class="col-lg-4">
+                <h4><i class="fas fa-address-card"></i> Address</h4>
+                <p class="mt-3 font-weight-bold"><a href="http://maps.google.com/maps?q=Prayagraj+Uttar+Pradesh">Prayagraj, Uttar Pradesh</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+</body>
+</html>

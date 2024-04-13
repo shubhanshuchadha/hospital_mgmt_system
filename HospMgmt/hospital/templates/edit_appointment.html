@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Appointments</title>
+</head>
+<body>
+    {% extends 'navbar.html' %}
+    {% block body %}
+    <div class="container" style="margin-top: 50px;">
+        <h2 class="text-center">Edit Appointment</h2>
+        <br>
+        <br>
+
+        <!-- Form Starts -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Doctor Options -->
+            <label>Doctor Name</label>
+            <select name="doctor" class="form-control">
+                {% for i in doctor %}
+                <option value="{{i.name}}">>{{i.name}}</option>
+                {% endfor %}
+            </select>
+
+            <!-- Patient Options -->
+            <label>Patient Name</label>
+            <select name="patient" class="form-control">
+                {% for i in patient %}
+                <option value="{{i.name}}">>{{i.name}}</option>
+                {% endfor %}
+            </select>
+
+            <!-- Date Field -->
+            <label>Date</label>
+            <input type="date" class="form-control" name="date1" value="{{appoint.date1}}" required>
+
+            <!-- Time Field -->
+            <label>Time</label>
+            <input type="time" class="form-control" name="time1" value="{{appoint.time1}}" required>
+            <br>
+
+            <input type="submit" value="Submit" class="form-control btn btn-primary">
+        </form>
+
+        <!-- Check if error is present, if not go to view_appointment page -->
+        {% ifequal error "No" %}
+        <script>
+            alert("Record editted successfully");
+            window.location = ("/view_appointment/");
+        </script>
+        {% endifequal %}
+        <!-- Otherwise display error -->
+        {% ifequal error "Yes" %}
+        <script>
+            alert("Something went wrong, Try Again");
+        </script>
+        {% endifequal %}
+
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+</body>
+</html>

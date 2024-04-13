@@ -1,0 +1,82 @@
+<!-- Navbar code -->
+
+{% load static %}
+<html>
+    <head>
+        <!-- Stylesheets -->
+        <title>Hospital Management System</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>  
+    </head>
+    <body>
+        <style>
+            
+        </style>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="/">Hospital Management System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myMenu">
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Medicine Menu -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medicine</a>
+                        <div class="dropdown-menu">
+                            <a href="/add_medicine/" class="dropdown-item">Add Medicine</a>
+                            <a href="/view_medicine/" class="dropdown-item">View Medicine</a>
+                        </div>
+                    </li>
+
+
+                    <!-- Doctor menu -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Doctor</a>
+                        <div class="dropdown-menu">
+                            <a href="/add_doctor/" class="dropdown-item">Add Doctor</a>
+                            <a href="/view_doctor/" class="dropdown-item">View Doctor</a>
+                        </div>
+                    </li>
+
+                    <!-- Patient Menu -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Patient</a>
+                        <div class="dropdown-menu">
+                            <a href="/add_patient/" class="dropdown-item">Add Patient</a>
+                            <a href="/view_patient/" class="dropdown-item">View Patient</a>
+                        </div>
+                    </li>
+
+                    <!-- Appointment Menu -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Appointment</a>
+                        <div class="dropdown-menu">
+                            <a href="/add_appointment/" class="dropdown-item">Add Appointment</a>
+                            <a href="/view_appointment/" class="dropdown-item">View Appointment</a>
+                        </div>
+                    </li>
+
+                    <!-- Home Button -->
+                    <li class="nav-item"><a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+
+                    <!-- About Button -->
+                    <li class="nav-item"><a href="/about" class="nav-link"><i class="fas fa-address-card"></i> About</a></li>
+
+                    <!-- Contact Button -->
+                    <li class="nav-item"><a href="/contact" class="nav-link"><i class="fas fa-phone"></i> Contact</a></li>
+
+                    <!-- Logout Button -->
+                    <li class="nav-item"><a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% block body %}
+    {% endblock %}
+    </body>
+</html>

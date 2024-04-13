@@ -1,0 +1,87 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.css">
+    
+    <title>Hospital Management System</title>
+</head>
+<body>
+    {% block body %}
+    <div class="container">
+        <h2 style="padding-left: 30px;padding-top: 10px;"><i class="fas fa-palette"></i> Dashboard</h2>
+        <hr>
+    </div>
+    <div class="container">
+        
+        <br>
+
+        <div class="row">
+
+            <!-- START Patient widget -->
+            <div class="col-lg-4 col-md-6">
+                <a style="text-decoration:none" href="/view_patient/">
+                    <div class="bg-success">
+                        <div class="row row-table">
+                            <div class="col-xs-4 text-center bg-success-dark pv-lg">
+                                <i class="fa fa-wheelchair" style="font-size:48px;"></i>
+                            </div>
+                            <div class="col-xs-8 pv-lg">
+                                <div class="h1 m0 text-bold" id="patientcount">{{p}}</div>
+                                <div class="text-uppercase">Patient</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- START Doctor widget -->
+            <div class="col-lg-4 col-md-6">
+                <a style="text-decoration:none" href="/view_doctor/">
+                    <div class="bg-danger">
+                        <div class="row row-table">
+                            <div class="col-xs-4 text-center bg-danger-dark pv-lg">
+                                <i class="fa fa-user-md" style="font-size:48px;"></i>
+                            </div>
+                            <div class="col-xs-8 pv-lg">
+                                <div class="h1 m0 text-bold" id="doctorcount">{{d}}</div>
+                                <div class="text-uppercase">Doctor</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- START Appointment widget -->
+            <div class="col-lg-4 col-md-6">
+                <a style="text-decoration:none" href="/view_appointment">
+                    <div class="bg-primary">
+                        <div class="row row-table">
+                            <div class="col-xs-4 text-center bg-primary-dark pv-lg">
+                                <i class="fas fa-pencil-alt" style="font-size:48px;"></i>
+                            </div>
+                            <div class="col-xs-8 pv-lg">
+                                <div class="h1 m0 text-bold" id="appointmentcount">{{a}}</div>
+                                <div class="text-uppercase">Appointment</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {% endblock %}
+</body>
+</html>

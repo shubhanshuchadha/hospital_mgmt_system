@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Patient</title>
+</head>
+<body>
+    {% extends 'navbar.html' %}
+    {% block body %}
+    <div class="container" style="margin-top: 50px;">
+        <h2 class="text-center">Edit Patient</h2>
+        <br>
+        <br>
+
+        <!-- Form Starts -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Patient Name Field -->
+            <label>Patient Name</label>
+            <input type="text" class="form-control" name="name" value="{{pat.name}}" required>
+
+            <!-- Gender -->
+            <label>Gender</label><br>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <br>
+
+            <!-- Contact Field -->
+            <label>Contact Number</label>
+            <input type="text" class="form-control" name="contact" value="{{pat.mobile}}" required>
+
+            <!-- Address Field -->
+            <label>Address</label>
+            <input type="text" class="form-control" name="address" value="{{pat.address}}" required>
+            <br>
+
+            <input type="submit" value="Submit" class="form-control btn btn-primary">
+        </form>
+    </div>
+
+    <!-- Check if error send to view_patients if no error -->
+    {% ifequal error "No" %}
+    <script>
+        alert("Record editted successfully");
+        window.location = ("/view_patient/");
+    </script>
+    {% endifequal %}
+    <!-- Display error if there is any -->
+    {% ifequal error "Yes" %}
+    <script>
+        alert("Something went wrong, Try Again");
+    </script>
+    {% endifequal %}
+
+
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+</body>
+</html>
